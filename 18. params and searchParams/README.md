@@ -49,14 +49,16 @@ Because server component doesn't support ***async await***.
 
 
 ```tsx
+"use client"
 import Link from 'next/link'
+import { use } from 'react';
 
-export default async function page({ params, searchParams }: {
+export default function page({ params, searchParams }: {
     params: Promise<{ articleId: string }>,
     searchParams: Promise<{ lang: "en" | "es" | "fr" }>
 }) {
-    const { articleId } = await params;
-    const { lang = "en" } = await searchParams;
+    const { articleId } = use(params);
+    const { lang = "en" } = use(searchParams);
 
     return (
         <div>
