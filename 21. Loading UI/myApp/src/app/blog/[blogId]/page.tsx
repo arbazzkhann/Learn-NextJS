@@ -11,7 +11,7 @@ export default async function page({params}: Prop) {
     });
   return (
     <div>
-        <h1>His is blod id page and id is: "{blogId}"</h1>
+        <h1>His is blog id page and id is: "{blogId}"</h1>
     </div>
-  )
+  );
 }
